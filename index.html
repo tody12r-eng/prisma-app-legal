@@ -3,58 +3,44 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prisma — Site oficial do aplicativo</title>
-<meta name="description" content="Site oficial do aplicativo Prisma: informações do serviço, termos de uso e política de privacidade.">
+<title>Prisma - Aplicativo integrado ao TikTok</title>
+<meta name="description" content="Aplicativo Prisma: conecte sua conta TikTok com o fluxo oficial de autorizacao, veja seu perfil, suas estatisticas e seus videos, e envie videos para o TikTok.">
 <style>
-  :root{
-    --ink:#101418;
-    --muted:#5b6672;
-    --line:#e4e8ec;
-    --brand:#1b7f6b;
-    --bg:#fbfcfd;
-  }
+  :root{--ink:#101418;--muted:#5b6672;--line:#e4e8ec;--brand:#1b7f6b;--bg:#fbfcfd;--warn:#b42318}
   *{box-sizing:border-box}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.65;
-    font-size:17px;
-  }
-  .wrap{max-width:820px;margin:0 auto;padding:56px 24px 72px}
-  header.masthead{display:flex;align-items:center;gap:14px;margin-bottom:40px}
-  .mark{
-    width:46px;height:46px;border-radius:14px;flex:0 0 auto;
-    background:linear-gradient(135deg,var(--brand),#3fb99c);
-    display:flex;align-items:center;justify-content:center;
-    color:#fff;font-weight:700;font-size:22px;letter-spacing:.5px;
-  }
-  .masthead h1{font-size:1.5rem;margin:0;letter-spacing:-.01em}
-  .masthead p{margin:2px 0 0;color:var(--muted);font-size:.92rem}
-  h2{font-size:1.12rem;margin:34px 0 10px;letter-spacing:-.01em}
-  p{margin:0 0 14px}
-  ul{margin:0 0 14px;padding-left:22px}
-  li{margin-bottom:6px}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;font-size:16px}
+  .wrap{max-width:900px;margin:0 auto;padding:40px 20px 72px}
+  header.masthead{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+  .mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--brand),#3fb99c);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+  .masthead h1{font-size:1.35rem;margin:0}
+  .masthead p{margin:0;color:var(--muted);font-size:.88rem}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+  h2{font-size:1.08rem;margin:0 0 12px}
+  h3{font-size:.95rem;margin:22px 0 8px}
+  p{margin:0 0 12px}
   a{color:var(--brand)}
-  .cards{display:grid;grid-template-columns:1fr;gap:14px;margin:26px 0 8px}
-  @media(min-width:640px){.cards{grid-template-columns:1fr 1fr}}
-  .card{
-    display:block;text-decoration:none;color:inherit;
-    background:#fff;border:1px solid var(--line);border-radius:14px;
-    padding:18px 20px;transition:border-color .15s ease, box-shadow .15s ease;
-  }
-  .card:hover{border-color:#c9d3da;box-shadow:0 6px 18px rgba(16,20,24,.06)}
-  .card strong{display:block;font-size:1rem}
-  .card span{color:var(--muted);font-size:.9rem}
-  .note{
-    background:#fff;border:1px solid var(--line);border-left:3px solid var(--brand);
-    border-radius:10px;padding:14px 18px;margin:26px 0;color:var(--muted);font-size:.94rem;
-  }
-  footer{
-    margin-top:46px;padding-top:20px;border-top:1px solid var(--line);
-    color:var(--muted);font-size:.88rem;
-  }
+  .btn{display:inline-block;border:0;border-radius:10px;padding:12px 20px;font-size:.95rem;font-weight:600;cursor:pointer;text-decoration:none}
+  .btn-brand{background:var(--brand);color:#fff}
+  .btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .profile{display:flex;gap:16px;align-items:center}
+  .avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;background:#eef2f4}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}
+  @media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
+  .stat{background:#f6f8f9;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .stat span{display:block;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+  .stat strong{font-size:1.15rem}
+  .videos{display:grid;grid-template-columns:1fr;gap:12px}
+  @media(min-width:640px){.videos{grid-template-columns:1fr 1fr}}
+  .video{display:flex;gap:12px;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff}
+  .video img{width:64px;height:86px;object-fit:cover;border-radius:8px;background:#eef2f4}
+  .video small{color:var(--muted)}
+  .note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:10px;padding:14px 18px;color:var(--muted);font-size:.92rem;margin-bottom:16px}
+  .error{border-left-color:var(--warn);color:var(--warn)}
+  .ok{border-left-color:var(--brand)}
+  input[type=file]{font-size:.9rem}
+  footer{margin-top:34px;color:var(--muted);font-size:.85rem}
+  code{background:#f1f4f6;padding:2px 6px;border-radius:6px;font-size:.85rem;word-break:break-all}
 </style>
 </head>
 <body>
@@ -63,52 +49,192 @@
     <div class="mark">P</div>
     <div>
       <h1>Prisma</h1>
-      <p>Site oficial do aplicativo e documentos legais</p>
+      <p>Aplicativo web integrado ao TikTok</p>
     </div>
   </header>
 
-  <p>
-    O <strong>Prisma</strong> é um aplicativo que integra a conta do usuário às APIs oficiais da
-    <strong>TikTok</strong> para oferecer recursos de conexão, leitura e gerenciamento de informações
-    da conta e do conteúdo do próprio usuário que autorizou o acesso.
-  </p>
-  <p>
-    A conexão é sempre iniciada e autorizada pelo próprio usuário, por meio do fluxo oficial de
-    autorização da TikTok. O acesso pode ser revogado a qualquer momento nas configurações da
-    conta TikTok.
-  </p>
-
-  <h2>Documentos legais</h2>
-  <div class="cards">
-    <a class="card" href="./termos.html">
-      <strong>Termos de Serviço</strong>
-      <span>Regras de uso do aplicativo Prisma</span>
-    </a>
-    <a class="card" href="./privacidade.html">
-      <strong>Política de Privacidade</strong>
-      <span>Quais dados tratamos, como e por quanto tempo</span>
-    </a>
-  </div>
-
-  <h2>Contato</h2>
-  <p>
-    Dúvidas, solicitações de suporte e pedidos relacionados a dados pessoais:
-    <a href="mailto:malubister448@gmail.com">malubister448@gmail.com</a>.
-  </p>
-
-  <div class="note">
-    Este site é mantido exclusivamente para publicar as informações oficiais do aplicativo Prisma,
-    incluindo os documentos exigidos para a revisão de integrações com a plataforma TikTok.
-  </div>
+  <div id="banner"></div>
+  <div id="app">Carregando...</div>
 
   <footer>
-    <p>
-      Prisma — <a href="./termos.html">Termos de Serviço</a> ·
-      <a href="./privacidade.html">Política de Privacidade</a> ·
-      <a href="mailto:malubister448@gmail.com">malubister448@gmail.com</a>
-    </p>
-    <p>Última atualização: 11 de outubro de 2026.</p>
+    Prisma &middot; <a href="./termos/">Termos de Servico</a> &middot;
+    <a href="./privacidade/">Politica de Privacidade</a> &middot;
+    <a href="./sobre.html">Sobre o aplicativo</a> &middot;
+    <a href="mailto:malubister448@gmail.com">malubister448@gmail.com</a>
   </footer>
 </div>
+
+<script src="./config.js"></script>
+<script>
+(function () {
+  var cfg = window.PRISMA_CONFIG || {};
+  var TOKEN_KEY = 'prisma_session';
+  var STATE_KEY = 'prisma_state';
+  var appEl = document.getElementById('app');
+  var bannerEl = document.getElementById('banner');
+
+  function apiBase() { return String(cfg.apiBase || '').replace(/\/+$/, ''); }
+  function redirectUri() { return location.origin + location.pathname.replace(/[^/]*$/, '') + 'callback.html'; }
+  function token() { return localStorage.getItem(TOKEN_KEY) || ''; }
+  function placeholderKey() { return !cfg.clientKey || cfg.clientKey.indexOf('SUBSTITUIR') === 0; }
+
+  function esc(value) {
+    return String(value === undefined || value === null ? '' : value)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function num(value) {
+    if (value === undefined || value === null || value === '') return '-';
+    return Number(value).toLocaleString('pt-BR');
+  }
+  function banner(message, type) {
+    bannerEl.innerHTML = message ? '<div class="note ' + (type || 'ok') + '">' + esc(message) + '</div>' : '';
+  }
+  function fail(error) { banner((error && error.message) ? error.message : String(error), 'error'); }
+
+  function api(path, options) {
+    var opts = options || {};
+    var headers = Object.assign({}, opts.headers || {});
+    if (token()) headers['Authorization'] = 'Bearer ' + token();
+    return fetch(apiBase() + path, Object.assign({}, opts, { headers: headers }))
+      .then(function (response) {
+        return response.text().then(function (text) {
+          var json = null;
+          try { json = text ? JSON.parse(text) : null; } catch (e) { json = { raw: text }; }
+          if (!response.ok) {
+            var detail = json && (json.message || json.error) ? (json.message || json.error) : ('HTTP ' + response.status);
+            throw new Error(detail);
+          }
+          return json;
+        });
+      });
+  }
+
+  function connect() {
+    if (placeholderKey()) {
+      fail('O client key do app TikTok ainda nao foi configurado em config.js.');
+      return;
+    }
+    var state = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Date.now()) + Math.random();
+    localStorage.setItem(STATE_KEY, state);
+    var url = new URL('https://www.tiktok.com/v2/auth/authorize/');
+    url.searchParams.set('client_key', cfg.clientKey);
+    url.searchParams.set('scope', cfg.scopes || 'user.info.profile,user.info.stats,video.list,video.upload');
+    url.searchParams.set('response_type', 'code');
+    url.searchParams.set('redirect_uri', redirectUri());
+    url.searchParams.set('state', state);
+    location.href = url.toString();
+  }
+
+  function renderConnect() {
+    appEl.innerHTML = ''
+      + '<div class="card">'
+      + '  <h2>Conectar com o TikTok</h2>'
+      + '  <p>O Prisma usa o fluxo oficial de autorizacao da TikTok. Voce escolhe as permissoes e pode revogar o acesso a qualquer momento.</p>'
+      + '  <p><small>Escopos solicitados: <code>' + esc(cfg.scopes) + '</code></small></p>'
+      + '  <div class="row"><button class="btn btn-brand" id="connect">Conectar com TikTok</button></div>'
+      + '</div>'
+      + '<div class="card">'
+      + '  <h2>Como funciona</h2>'
+      + '  <p>1. Voce autoriza o Prisma na tela oficial da TikTok.<br>'
+      + '     2. O aplicativo le os dados do seu proprio perfil e a lista dos seus videos.<br>'
+      + '     3. Voce pode enviar um video para a sua caixa de entrada no TikTok e desconectar quando quiser.</p>'
+      + '  <p><small>URL de retorno (redirect URI): <code>' + esc(redirectUri()) + '</code></small></p>'
+      + '</div>';
+    document.getElementById('connect').addEventListener('click', connect);
+  }
+
+  function renderDashboard(profile, videos) {
+    var avatar = profile.avatar_url
+      ? '<img class="avatar" src="' + esc(profile.avatar_url) + '" alt="avatar">'
+      : '<div class="avatar"></div>';
+    var items = (videos && videos.length)
+      ? videos.map(function (video) {
+          return '<div class="video">'
+            + '<img src="' + esc(video.cover_image_url || '') + '" alt="">'
+            + '<div><div><strong>' + esc(video.title || video.video_description || 'Sem titulo') + '</strong></div>'
+            + '<small>' + num(video.view_count) + ' visualizacoes &middot; ' + num(video.like_count) + ' curtidas &middot; '
+            + num(video.comment_count) + ' comentarios</small>'
+            + '<div style="margin-top:6px"><a href="' + esc(video.share_url || '#') + '" target="_blank" rel="noreferrer">Abrir no TikTok</a></div>'
+            + '</div></div>';
+        }).join('')
+      : '<p><small>Nenhum video publico retornado pela API para esta conta.</small></p>';
+
+    appEl.innerHTML = ''
+      + '<div class="card">'
+      + '  <h2>Conta conectada</h2>'
+      + '  <div class="profile">' + avatar
+      + '    <div><div><strong>' + esc(profile.display_name || 'Usuario TikTok') + '</strong>'
+      + (profile.is_verified ? ' <span title="verificado">&#10004;</span>' : '') + '</div>'
+      + '    <div><small>@' + esc(profile.username || '') + '</small></div>'
+      + '    <div><small>' + esc(profile.bio_description || '') + '</small></div>'
+      + (profile.profile_deep_link ? '<div><a href="' + esc(profile.profile_deep_link) + '" target="_blank" rel="noreferrer">Abrir perfil no TikTok</a></div>' : '')
+      + '    </div></div>'
+      + '  <h3>Estatisticas da conta (user.info.stats)</h3>'
+      + '  <div class="stats">'
+      + '    <div class="stat"><span>Seguidores</span><strong>' + num(profile.follower_count) + '</strong></div>'
+      + '    <div class="stat"><span>Seguindo</span><strong>' + num(profile.following_count) + '</strong></div>'
+      + '    <div class="stat"><span>Curtidas</span><strong>' + num(profile.likes_count) + '</strong></div>'
+      + '    <div class="stat"><span>Videos</span><strong>' + num(profile.video_count) + '</strong></div>'
+      + '  </div>'
+      + '  <div class="row" style="margin-top:16px"><button class="btn btn-ghost" id="disconnect">Desconectar e revogar acesso</button></div>'
+      + '</div>'
+      + '<div class="card"><h2>Meus videos (video.list)</h2><div class="videos">' + items + '</div></div>'
+      + '<div class="card">'
+      + '  <h2>Enviar video para o TikTok (Content Posting API)</h2>'
+      + '  <p>O envio como rascunho usa o escopo <code>video.upload</code> e o video aparece na caixa de entrada do criador no TikTok, pronto para editar e publicar.</p>'
+      + '  <form id="form-draft"><div class="row"><input type="file" name="video" accept="video/mp4,video/quicktime" required>'
+      + '  <button class="btn btn-brand" type="submit">Enviar como rascunho</button></div></form>'
+      + '  <h3>Publicacao direta (video.publish)</h3>'
+      + '  <p><small>Disponivel apenas para apps aprovados e fora do Sandbox.</small></p>'
+      + '  <form id="form-direct"><div class="row"><input type="file" name="video" accept="video/mp4,video/quicktime" required>'
+      + '  <button class="btn btn-ghost" type="submit">Publicar direto no perfil</button></div></form>'
+      + '</div>';
+
+    document.getElementById('disconnect').addEventListener('click', function () {
+      api('/api/disconnect', { method: 'POST' })
+        .catch(function () { /* a sessao local e limpa de qualquer forma */ })
+        .then(function () {
+          localStorage.removeItem(TOKEN_KEY);
+          banner('Acesso revogado e dados removidos.', 'ok');
+          renderConnect();
+        });
+    });
+
+    function submit(formId, endpoint) {
+      var form = document.getElementById(formId);
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var input = form.querySelector('input[type=file]');
+        if (!input.files || !input.files[0]) { fail('Selecione um arquivo de video.'); return; }
+        var data = new FormData();
+        data.append('video', input.files[0]);
+        banner('Enviando video...', 'ok');
+        api(endpoint, { method: 'POST', body: data })
+          .then(function (result) { banner('Envio concluido. publish_id: ' + result.publish_id, 'ok'); })
+          .catch(fail);
+      });
+    }
+    submit('form-draft', '/api/publish/draft');
+    submit('form-direct', '/api/publish/direct');
+  }
+
+  function loadDashboard() {
+    appEl.innerHTML = 'Carregando seus dados do TikTok...';
+    Promise.all([api('/api/me'), api('/api/videos').catch(function () { return { videos: [] }; })])
+      .then(function (results) { renderDashboard(results[0].profile, results[1].videos); })
+      .catch(function (error) {
+        if (String(error.message).indexOf('sessao') > -1 || String(error.message).indexOf('Conecte') > -1) {
+          localStorage.removeItem(TOKEN_KEY);
+          renderConnect();
+        } else {
+          fail(error);
+          renderConnect();
+        }
+      });
+  }
+
+  if (token()) { loadDashboard(); } else { renderConnect(); }
+})();
+</script>
 </body>
 </html>
