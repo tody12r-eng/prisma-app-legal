@@ -7,7 +7,7 @@ window.PRISMA_CONFIG = {
   apiBase: 'https://3000-i4s81c9nxmukjsuo69an1-89b66062.us1.manus.computer',
 
   // Client key do app TikTok (Sandbox enquanto o app nao estiver aprovado)
-  clientKey: 'SUBSTITUIR_PELO_CLIENT_KEY_DO_SANDBOX',
+  clientKey: 'awv97n8vujxalyd6',
 
   // Escopos solicitados na autorizacao (devem existir no app do portal)
   scopes: 'user.info.profile,user.info.stats,video.list,video.upload'
