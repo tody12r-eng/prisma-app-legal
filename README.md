@@ -5,11 +5,20 @@ aprovação de integração com a plataforma TikTok.
 
 ## URLs publicadas
 
-| Página | URL |
-| --- | --- |
-| Início | https://tody12r-eng.github.io/prisma-app-legal/ |
-| Termos de Serviço | https://tody12r-eng.github.io/prisma-app-legal/termos.html |
-| Política de Privacidade | https://tody12r-eng.github.io/prisma-app-legal/privacidade.html |
+| Página | URL recomendada (formato diretório) | URL alternativa |
+| --- | --- | --- |
+| Início (site oficial) | https://tody12r-eng.github.io/prisma-app-legal/ | — |
+| Termos de Serviço | https://tody12r-eng.github.io/prisma-app-legal/termos/ | https://tody12r-eng.github.io/prisma-app-legal/termos.html |
+| Política de Privacidade | https://tody12r-eng.github.io/prisma-app-legal/privacidade/ | https://tody12r-eng.github.io/prisma-app-legal/privacidade.html |
+
+As duas formas (diretório e `.html`) servem o mesmo conteúdo. O formato de diretório é mais seguro
+no portal da TikTok, que normaliza URLs acrescentando uma barra (`/`) ao final.
+
+## Verificação de URL no TikTok (URL properties)
+
+O TikTok exige comprovar a posse do endereço. Como o domínio é `github.io`, a verificação por DNS
+não é possível; use a opção **URL prefix** e publique o arquivo de assinatura fornecido pelo TikTok
+na raiz do site (branch `gh-pages`, mesma pasta deste README).
 
 ## Como a publicação funciona
 
@@ -26,5 +35,5 @@ Suporte e privacidade: malubister448@gmail.com
 ## Arquivos
 
 - `index.html` — página inicial do aplicativo
-- `termos.html` — Termos de Serviço
-- `privacidade.html` — Política de Privacidade
+- `termos.html` / `termos/index.html` — Termos de Serviço
+- `privacidade.html` / `privacidade/index.html` — Política de Privacidade
